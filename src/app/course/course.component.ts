@@ -1,32 +1,71 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Course } from "../model/course";
-import { finalize, tap } from "rxjs/operators";
-import { Observable } from "rxjs";
-import { Lesson } from "../model/lesson";
-import { CoursesService } from "src/services/courses.service";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Course} from '../model/course';
+import {finalize, tap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {Lesson} from '../model/lesson';
+import {CoursesService} from "../services/courses.service";
+
 
 @Component({
-  selector: "course",
-  templateUrl: "./course.component.html",
-  styleUrls: ["./course.component.css"],
+  selector: 'course',
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-  course: Course;
+
+  course:Course;
+
   lessons: Lesson[];
+
   loading = false;
 
-  displayedColumns = ["seqNo", "description", "duration"];
+  lastPageLoaded = 0;
+
+  displayedColumns = ['seqNo', 'description', 'duration'];
 
   constructor(
-    private route: ActivatedRoute,
-    private coursesService: CoursesService
-  ) {}
+      private route: ActivatedRoute,
+      private coursesService: CoursesService) {
+
+  }
 
   ngOnInit() {
-    this.course = this.route.snapshot.data["course"];
-    this.coursesService
-      .findLessons(this.course.id)
-      .subscribe((lessons) => (this.lessons = lessons));
+
+      this.course = this.route.snapshot.data["course"];
+
+      this.loading = true;
+
+      this.coursesService.findLessons(this.course.id)
+          .pipe(
+              finalize(() => this.loading = false)
+          )
+          .subscribe(
+              lessons => this.lessons = lessons
+          );
+
   }
+
+    loadMore() {
+
+      this.lastPageLoaded++;
+
+      this.loading = true;
+
+      this.coursesService.findLessons(this.course.id, "asc",
+          this.lastPageLoaded)
+          .pipe(
+              finalize(() => this.loading = false)
+          )
+          .subscribe(lessons => this.lessons = this.lessons.concat(lessons))
+
+    }
 }
+
+
+
+
+
+
+
+

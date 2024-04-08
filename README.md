@@ -1,5 +1,4 @@
-
-## Firebase & AngularFire In Depth 
+## Firebase & AngularFire In Depth
 
 This repository currently contains the code for the [Firebase & AngularFire In Depth](https://angular-university.io/course/angularfire-course).
 
@@ -9,9 +8,7 @@ This course is updated to Angular 13:
 
 You can find the starting point of the course in the [1-start branch](https://github.com/angular-university/firebase-course/tree/1-start).
 
-This master branch contains the *final version of the course code*, that you can use as a reference if you choose to code along. 
-
-
+This master branch contains the _final version of the course code_, that you can use as a reference if you choose to code along.
 
 # Installation pre-requisites
 
@@ -21,7 +18,7 @@ IMPORTANT: Please use Node 16 LST (Long Term Support version).
 
 With the following command the angular-cli will be installed globally in your machine:
 
-    npm install -g @angular/cli 
+    npm install -g @angular/cli
 
 # How To install this repository
 
@@ -38,7 +35,7 @@ Note: **We recommend using npm ci, instead of npm install**. This will ensure th
 
 To run the frontend part of our code, we will use the Angular CLI:
 
-    npm start 
+    npm start
 
 The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
 
@@ -61,7 +58,6 @@ If you are looking for the [Angular Router In Depth](https://angular-university.
 If you are looking for the [Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.io/course/ngrx-course), the repo with the full code can be found here:
 
 ![Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.s3-us-west-1.amazonaws.com/course-images/ngrx-v2.png)
-
 
 # Angular Core Deep Dive Course
 
@@ -121,7 +117,6 @@ If you are looking for the Angular Advanced Course, the repo with the full code 
 
 ![Angular Advanced Library Laboratory Course: Build Your Own Library](https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png)
 
-
 ## RxJs and Reactive Patterns Angular Architecture Course
 
 If you are looking for the RxJs and Reactive Patterns Angular Architecture Course code, the repo with the full code can be found here:
@@ -129,7 +124,6 @@ If you are looking for the RxJs and Reactive Patterns Angular Architecture Cours
 [RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
 
 ![RxJs and Reactive Patterns Angular Architecture Course](https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png)
-
 
 ## Complete Typescript Course - Build A REST API
 
@@ -140,7 +134,3 @@ If you are looking for the Complete Typescript 2 Course - Build a REST API, the 
 [Github repo for this course](https://github.com/angular-university/complete-typescript-course)
 
 ![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
-
-
-
-
